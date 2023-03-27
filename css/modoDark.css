@@ -1,0 +1,39 @@
+.modoDark{
+    background-color: rgba(25, 24, 37, 1);
+
+}
+
+/* cabecera */
+.modoDark header{
+    background-color: rgba(25, 24, 37, 1);
+}
+.modoDark header h1{
+    color: white;
+}
+.modoDark header button{
+    color: white;
+}
+.modoDark nav{
+    background-color: rgba(25, 24, 37, 1);
+}
+
+/* seccion cambio color */
+.modoDark div{
+    background-color: white;
+    color: black;
+}
+
+/* contenido principal */
+.modoDark main figure{
+    border: solid white;
+}
+.modoDark main p{
+    color: white;
+}
+
+/* pie de pagina */
+.modoDark footer{
+    background-color:  rgba(25, 24, 37, 1);
+    color: white;
+}
+
