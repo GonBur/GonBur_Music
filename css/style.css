@@ -45,7 +45,7 @@ header >a{
 }
 header >a >h1{
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 3rem;
     letter-spacing: .2em;
     color: black;
     text-shadow: .1rem .1rem  #146C94;
@@ -97,8 +97,10 @@ header >nav >ul >li:hover{
     border-bottom: solid .3rem;
 }
 header >nav >ul >li >a:hover{
+    transition: all .5s;
     color:  rgb(135, 202, 233);
     text-shadow: .1rem .1rem white;
+    border-bottom: solid;
 }
 
 .menuDesplegable{
@@ -117,7 +119,7 @@ div{
     height: 9vh;
     display: flex;
     justify-content: space-between;
-    padding: calc(9vh - 8vh) 5%;
+    padding: calc(9vh - 8vh) 2%;
     color: white;
     position: fixed;
     width: 100%;
@@ -125,9 +127,6 @@ div{
 
 div section p{
     cursor: pointer;
-    display: inline;
-    font-size: 2.3rem;
-    text-align: center;
 }
 
 /* contenido principal */
@@ -139,27 +138,52 @@ main{
 }
 /* figura con animacion del contenido principal */
 main figure{
-    width: 90%;
-    background-color: red;
+    width: 85%;
+    background-image: url("../img/GonBur_Music.png");
+    background-color: #02B8B6;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 35vh;
     margin: 14% auto 2%;
     border: solid black;
     border-radius: .6rem;
-    animation: animacionImagenes 20s both infinite;
+    animation: animacionImagenes 40s both infinite;
 }
 /* animacion de la figura */
 @keyframes animacionImagenes {
     15%{
-        background-color: #146C94;
+        background-image: url("../img/2.png");
+        background-color: #93F6F7;
     }
     30%{
-        background-color: #5FA6C7;
+        background-image: url("../img/3.png");
+        background-color: #EAE9E7;
     }
     60%{
-        background-color: aliceblue;
+        background-image: url("../img/4.png");
+        background-color: #993E97;
     }
     90%{
-        background-color: aqua;
+        background-image: url("../img/5.png");
+        background-color: #090D16;
+    }
+}
+.animacion_musica{
+    animation: animacion_icono .2ms infinite;
+    
+}@keyframes animacion_icono{
+    15%{
+        text-shadow:  0rem -.5rem red;
+    }
+    30%{
+        text-shadow:  0rem -1rem rgb(197, 245, 142);
+    }
+    60%{
+        text-shadow:  0rem -1rem blue;
+    }
+    90%{
+        text-shadow:  0rem -1.5rem rgb(255, 0, 0);
     }
 }
 
@@ -183,7 +207,7 @@ main button{
 }
 main >button >a{
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: white;
     font-weight: bold;
     text-shadow:  0rem .2rem black;
@@ -198,4 +222,171 @@ footer{
     height: 5vh;
     margin-top: 79vh;
     background-color: #146C94;
+}
+
+
+/* modo tablet */
+@media (min-width: 766px) and (max-width:1023px) {
+    /* cabecera */
+
+/* titulo */
+
+header >a >h1{
+    font-size: 5.5rem;
+}
+
+/* boton de navegacion */
+header >button >.material-symbols-outlined{
+    font-size: 80px;
+}
+
+/* menu de navegacion */
+header >nav >ul >li >a{
+    font-size: 3.5rem;
+}
+
+.menuDesplegable{
+    transition: all .9s;
+    /* display: block; */
+    left: 0;
+}
+
+
+/* seccion del modo oscuro y claro y la opcion de musica */
+div{
+    padding: calc(9vh - 7vh) 4%;
+}
+
+
+/* contenido principal */
+/* figura con animacion del contenido principal */
+main figure{
+    width: 68%;
+    height: 40vh;
+}
+
+/* parrafo del contenido principal */
+main p{
+    font-size: 3rem;
+}
+
+main button{
+    width: 40%;
+    margin: 1% calc(100% - 70%) 0;
+    padding: 2%;
+}
+main >button >a{
+    font-size: 2.3rem;
+}
+
+
+/* pie de pagina */
+footer{
+    height: 5vh;
+    margin-top: 79vh;
+    background-color: #146C94;
+}
+}
+
+/* modo pc */
+@media (min-width:1023px) {
+    body{
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: 16vh  9vh 70vh 5vh;
+        width: 100%;
+        background-color: white;
+    }
+    
+    /* cabecera */
+    header{
+        width: 100%;
+        height: 16vh;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 10% 25% 65%;
+        padding-right: 0;
+    }
+
+    
+    /* titulo */
+    header >a >h1{
+        font-size: 6rem;
+    }
+    
+    /* boton de navegacion */
+    header >button{
+        display: none;
+    }
+
+    
+    /* menu de navegacion */
+    header >nav{
+        /* display: none; */
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        padding: 0;
+        left: 0;
+    }
+    header >nav >ul{
+        height: 100%;
+        width: 100%;
+        background-color: #146C94;
+    }
+    header >nav >ul >li{
+        display: inline-block;
+        margin: auto .5%;
+        padding: 5% .6%;
+    }
+    header >nav >ul >li >a{
+        font-size: 2.5rem;
+        padding: 5% 0;
+        
+    }
+
+    
+    
+    /* seccion del modo oscuro y claro y la opcion de musica */
+    div{
+        padding: calc(9vh - 7vh) 5%;
+    }
+
+    
+    /* contenido principal */
+    main{
+        padding-top: 0;
+    }
+    /* figura con animacion del contenido principal */
+    main figure{
+        width: 40%;
+        height: 45vh;
+        margin: 13% auto 0;
+    }
+
+    
+    /* parrafo del contenido principal */
+    main p{
+        margin: 1% 10%;
+        font-size: 4rem;
+    }
+    
+    main button{
+        width: 15%;
+        margin: 1% calc(100% - 58%) 0;
+        padding: 1% 0;
+    }
+    main >button >a{
+        font-size: 2rem;
+    }
+
+    
+    /* pie de pagina */
+    footer{
+        height: 5vh;
+        margin-top: 79vh;
+        background-color: #146C94;
+    }
 }
